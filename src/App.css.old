@@ -1,0 +1,227 @@
+import React, { useState, useMemo } from 'react';
+import { Calendar, ChevronLeft, ChevronRight, Users, CheckCircle2, AlertCircle, Info } from 'lucide-react';
+
+const App = () => {
+  const [selectedTask, setSelectedTask] = useState(null);
+
+  // Configuración de semanas
+  const weeks = [1, 2, 3, 4, 5, 6, 7, 8];
+  
+  // Datos del Proyecto
+  const projectData = [
+    {
+      id: 'f1',
+      phase: 'ANÁLISIS',
+      color: 'bg-blue-600',
+      tasks: [
+        { id: 1, title: 'Revisión de requisitos licitación', start: 1, end: 1, alignment: 'Punto 1', role: 'PM' },
+        { id: 2, title: 'Definición de necesidades formativas', start: 1, end: 1, alignment: 'Punto 2', role: 'PM' },
+        { id: 3, title: 'Análisis del contexto organizativo', start: 1, end: 1, alignment: 'Punto 1', role: 'PM' },
+        { id: 4, title: 'Identificación de perfiles (Técnicos/Mandos)', start: 1, end: 2, alignment: 'Punto 6.1', role: 'PM' },
+        { id: 5, title: 'Definición de objetivos formativos', start: 2, end: 2, alignment: 'Punto 6.1', role: 'PM/Calidad' },
+      ]
+    },
+    {
+      id: 'f2',
+      phase: 'DISEÑO',
+      color: 'bg-cyan-500',
+      tasks: [
+        { id: 6, title: 'Modelo pedagógico (LXD/Microlearning)', start: 2, end: 2, alignment: '6.2', role: 'Calidad' },
+        { id: 7, title: 'Competencias y objetivos aprendizaje', start: 2, end: 3, alignment: '6.3', role: 'Calidad' },
+        { id: 8, title: 'Estructuración de módulos y contenidos', start: 3, end: 3, alignment: '6.4', role: 'Calidad' },
+        { id: 9, title: 'Diseño de la estructura de cápsulas', start: 3, end: 4, alignment: '6.6', role: 'Calidad' },
+        { id: 10, title: 'Diseño del sistema de evaluación', start: 3, end: 4, alignment: '6.7', role: 'Calidad' },
+        { id: 11, title: 'Aplicación del DUA al diseño', start: 4, end: 4, alignment: '6.2', role: 'Calidad' },
+      ]
+    },
+    {
+      id: 'f3',
+      phase: 'DESARROLLO',
+      color: 'bg-indigo-500',
+      tasks: [
+        { id: 12, title: 'Producción de contenidos (guiones)', start: 3, end: 5, alignment: '6.5', role: 'Calidad' },
+        { id: 13, title: 'Diseño visual y UX (Figma)', start: 3, end: 5, alignment: '7.2', role: 'PM' },
+        { id: 14, title: 'Desarrollo de recursos multimedia', start: 4, end: 6, alignment: '7.5', role: 'PM' },
+        { id: 15, title: 'Actividades interactivas y simulaciones', start: 4, end: 6, alignment: '7.5', role: 'PM' },
+        { id: 16, title: 'Integración de contenidos en LMS', start: 5, end: 6, alignment: '7.2', role: 'PM' },
+      ]
+    },
+    {
+      id: 'f4',
+      phase: 'IMPLEMENTACIÓN',
+      color: 'bg-teal-500',
+      tasks: [
+        { id: 17, title: 'Configuración entorno LMS', start: 6, end: 6, alignment: '7.1', role: 'PM' },
+        { id: 18, title: 'Pruebas técnicas y funcionales', start: 6, end: 7, alignment: '7.3', role: 'Calidad' },
+        { id: 19, title: 'Ajustes y optimización', start: 7, end: 7, alignment: '7.3', role: 'PM/Calidad' },
+        { id: 20, title: 'Despliegue del programa formativo', start: 7, end: 7, alignment: '7.1', role: 'PM' },
+      ]
+    },
+    {
+      id: 'f5',
+      phase: 'EVALUACIÓN',
+      color: 'bg-purple-500',
+      tasks: [
+        { id: 21, title: 'Seguimiento (Learning Analytics)', start: 7, end: 8, alignment: '7.4', role: 'PM' },
+        { id: 22, title: 'Evaluación de resultados', start: 8, end: 8, alignment: '10', role: 'Calidad' },
+        { id: 23, title: 'Recogida de feedback', start: 8, end: 8, alignment: '10', role: 'PM' },
+        { id: 24, title: 'Propuestas de mejora continua', start: 8, end: 8, alignment: '7.4', role: 'Calidad' },
+      ]
+    },
+    {
+      id: 'f6',
+      phase: 'TRANSVERSAL',
+      color: 'bg-slate-700',
+      tasks: [
+        { id: 25, title: 'Coordinación y gestión del proyecto', start: 1, end: 8, alignment: 'Gestión', role: 'PM' },
+        { id: 26, title: 'Comunicación con stakeholders', start: 1, end: 8, alignment: 'Gestión', role: 'PM' },
+        { id: 27, title: 'Control de calidad pedagógica', start: 3, end: 8, alignment: 'Calidad', role: 'Calidad' },
+      ]
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-[#0a0e14] text-slate-200 p-4 md:p-8 font-sans">
+      {/* Header */}
+      <header className="max-w-7xl mx-auto mb-8 border-l-4 border-cyan-500 pl-6">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+          <div>
+            <h1 className="text-3xl font-bold tracking-tight text-white uppercase">
+              SYMEC <span className="text-cyan-400">Learning Lab</span>
+            </h1>
+            <p className="text-slate-400 mt-1 italic">Cyber Decision & Defend - Planificación Temporal</p>
+          </div>
+          <div className="flex gap-4">
+            <div className="bg-[#161b22] px-4 py-2 rounded-lg border border-slate-700">
+              <span className="text-xs uppercase text-slate-500 block">Duración</span>
+              <span className="font-mono text-cyan-400">8 Semanas</span>
+            </div>
+            <div className="bg-[#161b22] px-4 py-2 rounded-lg border border-slate-700">
+              <span className="text-xs uppercase text-slate-500 block">Estado</span>
+              <span className="text-emerald-400 flex items-center gap-1">
+                <CheckCircle2 size={14} /> Planificado
+              </span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* Main Container */}
+      <main className="max-w-7xl mx-auto bg-[#0d1117] rounded-xl border border-slate-800 shadow-2xl overflow-hidden">
+        {/* Timeline Header */}
+        <div className="grid grid-cols-12 border-b border-slate-800 bg-[#161b22]">
+          <div className="col-span-4 p-4 font-bold text-xs uppercase tracking-widest text-slate-500">Actividades / Fases</div>
+          <div className="col-span-8 grid grid-cols-8">
+            {weeks.map(w => (
+              <div key={w} className="text-center p-4 border-l border-slate-800 font-mono text-sm">
+                S{w}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Gantt Content */}
+        <div className="divide-y divide-slate-800/50">
+          {projectData.map((phase) => (
+            <div key={phase.id} className="group">
+              {/* Phase Header */}
+              <div className="grid grid-cols-12 bg-slate-900/30 group-hover:bg-slate-900/50 transition-colors">
+                <div className="col-span-12 p-3 flex items-center gap-3">
+                  <div className={`w-3 h-3 rounded-full ${phase.color}`}></div>
+                  <h3 className="font-bold text-xs tracking-wider text-slate-300">{phase.phase}</h3>
+                </div>
+              </div>
+
+              {/* Phase Tasks */}
+              {phase.tasks.map((task) => (
+                <div key={task.id} className="grid grid-cols-12 hover:bg-white/5 transition-all duration-200">
+                  <div className="col-span-4 p-3 pl-8 text-sm text-slate-400 flex flex-col justify-center">
+                    <span className="leading-tight">{task.title}</span>
+                    <span className="text-[10px] text-slate-600 mt-1 uppercase font-mono">Ref: {task.alignment}</span>
+                  </div>
+                  <div className="col-span-8 grid grid-cols-8 relative">
+                    {/* Grid lines */}
+                    {weeks.map(w => <div key={w} className="border-l border-slate-800/50 h-full"></div>)}
+                    
+                    {/* Task Bar */}
+                    <div 
+                      className={`absolute top-2 bottom-2 rounded-md ${phase.color} opacity-80 hover:opacity-100 transition-all cursor-help flex items-center justify-center text-[10px] font-bold text-white shadow-lg shadow-black/20`}
+                      style={{
+                        left: `${((task.start - 1) / 8) * 100}%`,
+                        width: `${((task.end - task.start + 1) / 8) * 100}%`,
+                        margin: '0 4px'
+                      }}
+                      onClick={() => setSelectedTask(task)}
+                    >
+                      <span className="hidden md:inline truncate px-2">{task.role}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+      </main>
+
+      {/* Footer / Legend */}
+      <footer className="max-w-7xl mx-auto mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="bg-[#161b22] p-4 rounded-xl border border-slate-800">
+          <h4 className="text-sm font-bold mb-3 flex items-center gap-2">
+            <Users size={16} className="text-cyan-400" /> Equipo Responsable
+          </h4>
+          <div className="space-y-2 text-xs">
+            <div className="flex justify-between items-center bg-black/20 p-2 rounded">
+              <span className="text-slate-400 italic">Project Manager</span>
+              <span className="text-cyan-400 font-mono">Gestión / UX / Dev</span>
+            </div>
+            <div className="flex justify-between items-center bg-black/20 p-2 rounded">
+              <span className="text-slate-400 italic">Dpto. Calidad</span>
+              <span className="text-indigo-400 font-mono">Pedagogía / QA</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-[#161b22] p-4 rounded-xl border border-slate-800 col-span-2">
+          <h4 className="text-sm font-bold mb-3 flex items-center gap-2">
+            <Info size={16} className="text-cyan-400" /> Notas de Implementación
+          </h4>
+          <p className="text-xs text-slate-400 leading-relaxed">
+            Este Gantt refleja la metodología <span className="text-white">Cyber Minimal</span>. 
+            Las tareas <span className="text-slate-300 font-bold underline">Transversales</span> aseguran que el feedback del Departamento de Calidad se integre desde la S3 (Desarrollo) hasta la entrega final en S8, garantizando que el diseño instruccional se mantenga alineado con los objetivos de la licitación.
+          </p>
+        </div>
+      </footer>
+
+      {/* Detail Overlay (Simple Modal) */}
+      {selectedTask && (
+        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 z-50" onClick={() => setSelectedTask(null)}>
+          <div className="bg-[#1c2128] border border-slate-700 p-6 rounded-2xl max-w-sm w-full shadow-2xl" onClick={e => e.stopPropagation()}>
+            <h2 className="text-xl font-bold text-white mb-2">{selectedTask.title}</h2>
+            <div className="space-y-4 mt-4">
+              <div className="flex justify-between text-sm">
+                <span className="text-slate-500">Temporalidad:</span>
+                <span className="text-cyan-400 font-mono">Semana {selectedTask.start} - {selectedTask.end}</span>
+              </div>
+              <div className="flex justify-between text-sm">
+                <span className="text-slate-500">Responsable:</span>
+                <span className="text-white font-semibold">{selectedTask.role}</span>
+              </div>
+              <div className="flex justify-between text-sm">
+                <span className="text-slate-500">Alineación:</span>
+                <span className="text-emerald-400 font-mono">{selectedTask.alignment}</span>
+              </div>
+              <button 
+                className="w-full mt-4 bg-slate-700 hover:bg-slate-600 text-white py-2 rounded-lg transition-colors"
+                onClick={() => setSelectedTask(null)}
+              >
+                Cerrar
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default App;
