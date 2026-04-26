@@ -222,7 +222,7 @@ Resultado: Iteración del diseño.`
       start: 1,
       end: 8,
       roleLabel: 'PM',
-      responsible: 'Carolina Gómez · Project Manager',
+      responsible: 'Carolina Gómez - Project Manager',
       content: `Qué: Coordinación y seguimiento del proyecto.
 Para qué: Garantizar cumplimiento de planificación.
 Resultado: Proyecto alineado.`
@@ -233,7 +233,7 @@ Resultado: Proyecto alineado.`
       start: 3,
       end: 8,
       roleLabel: 'DI',
-      responsible: 'Marta Polo · Diseño instruccional',
+      responsible: 'Marta Polo - Diseño instruccional',
       content: `Qué: Revisión pedagógica continua.
 Para qué: Asegurar coherencia metodológica.
 Resultado: Calidad garantizada.`
@@ -244,7 +244,7 @@ Resultado: Calidad garantizada.`
       start: 1,
       end: 8,
       roleLabel: 'CORP',
-      responsible: 'Efrén Úbeda · Gestión corporativa',
+      responsible: 'Efrén Úbeda - Gestión corporativa',
       content: `Qué: Supervisión estratégica del proyecto.
 Para qué: Garantizar coherencia global y alineación corporativa.
 Resultado: Propuesta alineada con objetivos de negocio.`
@@ -255,7 +255,7 @@ Resultado: Propuesta alineada con objetivos de negocio.`
   start: 1,
   end: 8,
   roleLabel: 'PM',
-  responsible: 'Carolina Gómez · Project Manager',
+  responsible: 'Carolina Gómez - Project Manager',
   content: `Qué: Gestión de la comunicación con cliente y agentes implicados.
 Para qué: Alinear expectativas, validar avances y facilitar la toma de decisiones.
 Resultado: Seguimiento transparente y validación continua del proyecto.`
