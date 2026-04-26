@@ -282,22 +282,22 @@ Resultado: Seguimiento transparente y validación continua del proyecto.`
           <div className="col-span-2 flex flex-col gap-3 items-end">
 
   <div className="w-full max-w-[120px] px-3 py-2 rounded-xl border border-cyan-500/40 bg-[#0d1117]">
-    <span className="block text-[9px] text-slate-500">Duración</span>
+    <span className="block text-[11px] text-slate-500">Duración</span>
     <span className="text-cyan-400 text-sm">8 semanas</span>
   </div>
 
   <div className="w-full max-w-[120px] px-3 py-2 rounded-xl border border-green-500/40 bg-[#0d1117]">
-    <span className="block text-[9px] text-slate-500">Estado</span>
+    <span className="block text-[11px] text-slate-500">Estado</span>
     <span className="text-green-400 text-sm">Planificado</span>
   </div>
 
   <div className="w-full max-w-[120px] px-3 py-2 rounded-xl border border-purple-500/40 bg-[#0d1117]">
-    <span className="block text-[9px] text-slate-500">Alcance</span>
+    <span className="block text-[11px] text-slate-500">Alcance</span>
     <span className="text-purple-400 text-sm">24 cápsulas</span>
   </div>
 
   <div className="w-full max-w-[120px] px-3 py-2 rounded-xl border border-indigo-500/40 bg-[#0d1117]">
-    <span className="block text-[9px] text-slate-500">Modalidad</span>
+    <span className="block text-[11px] text-slate-500">Modalidad</span>
     <span className="text-indigo-400 text-sm">LMS online</span>
   </div>
 
