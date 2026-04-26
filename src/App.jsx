@@ -351,7 +351,7 @@ Resultado: Seguimiento transparente y validación continua del proyecto.`
                     ))}
 
                     <div
-                      className={`${phase.color} absolute top-1 bottom-1 rounded-md flex items-center justify-center text-[10px] font-semibold text-white`}
+                      className={`${phase.color} absolute top-1 bottom-1 rounded-md flex items-center justify-center text-[10px] font-semibold text-white cursor-pointer`}
                       style={{
                         left: `${((task.start - 1) / 8) * 100}%`,
                         width: `${((task.end - task.start + 1) / 8) * 100}%`
