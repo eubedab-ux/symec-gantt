@@ -7,209 +7,319 @@ const App = () => {
 
   const projectData = [
     {
-      id: 'f1',
-      phase: 'ANÁLISIS',
-      color: 'bg-blue-600',
-      tasks: [
-        {
-          id: 1,
-          title: 'Revisión de requisitos',
-          start: 1,
-          end: 1,
-          roleLabel: 'PM',
-          responsible: 'Carolina Gómez - Project Manager',
-          content: `Qué: Análisis de condiciones, objetivos y criterios de la licitación.
+  id: 'f1',
+  phase: 'ANÁLISIS',
+  color: 'bg-blue-600',
+  tasks: [
+    {
+      id: 1,
+      title: 'Revisión de requisitos licitación',
+      start: 1,
+      end: 1,
+      roleLabel: 'PM',
+      responsible: 'Carolina Gómez - Project Manager',
+      content: `Qué: Análisis de condiciones, objetivos y criterios de la licitación.
 Para qué: Alinear la propuesta con las expectativas del cliente.
 Resultado: Marco de requisitos validado.`
-        },
-        {
-          id: 2,
-          title: 'Necesidades formativas',
-          start: 1,
-          end: 1,
-          roleLabel: 'DI',
-          responsible: 'Marta Polo - Diseño instruccional',
-          content: `Qué: Identificación de gaps en ciberseguridad.
+    },
+    {
+      id: 2,
+      title: 'Definición de necesidades formativas',
+      start: 1,
+      end: 1,
+      roleLabel: 'DI',
+      responsible: 'Marta Polo - Diseño instruccional',
+      content: `Qué: Identificación de gaps en ciberseguridad.
 Para qué: Priorizar contenidos relevantes.
 Resultado: Mapa de necesidades.`
-        },
-        {
-          id: 3,
-          title: 'Identificación de perfiles',
-          start: 1,
-          end: 2,
-          roleLabel: 'DI',
-          responsible: 'Marta Polo - Diseño instruccional',
-          content: `Qué: Segmentación de usuarios.
+    },
+    {
+      id: 3,
+      title: 'Análisis del contexto organizativo',
+      start: 1,
+      end: 1,
+      roleLabel: 'PM',
+      responsible: 'Carolina Gómez - Project Manager',
+      content: `Qué: Análisis del entorno organizativo.
+Para qué: Ajustar la propuesta al contexto.
+Resultado: Contexto definido.`
+    },
+    {
+      id: 4,
+      title: 'Identificación de perfiles',
+      start: 1,
+      end: 2,
+      roleLabel: 'DI',
+      responsible: 'Marta Polo - Diseño instruccional',
+      content: `Qué: Segmentación de usuarios.
 Para qué: Ajustar el diseño formativo.
 Resultado: Público objetivo definido.`
-        }
-      ]
     },
-
     {
-      id: 'f2',
-      phase: 'DISEÑO',
-      color: 'bg-cyan-500',
-      tasks: [
-        {
-          id: 4,
-          title: 'Modelo pedagógico',
-          start: 2,
-          end: 2,
-          roleLabel: 'DI',
-          responsible: 'Marta Polo - Diseño instruccional',
-          content: `Qué: Definición del enfoque LXD + microlearning.
+      id: 5,
+      title: 'Definición de objetivos formativos',
+      start: 2,
+      end: 2,
+      roleLabel: 'DI',
+      responsible: 'Marta Polo - Diseño instruccional',
+      content: `Qué: Definición de objetivos.
+Para qué: Guiar el diseño formativo.
+Resultado: Objetivos definidos.`
+    }
+  ]
+},
+
+   {
+  id: 'f2',
+  phase: 'DISEÑO',
+  color: 'bg-cyan-500',
+  tasks: [
+    {
+      id: 6,
+      title: 'Modelo pedagógico (LXD / Microlearning)',
+      start: 2,
+      end: 2,
+      roleLabel: 'DI',
+      responsible: 'Marta Polo - Diseño instruccional',
+      content: `Qué: Definición del enfoque metodológico.
 Para qué: Garantizar aprendizaje aplicado.
-Resultado: Marco metodológico.`
-        },
-        {
-          id: 5,
-          title: 'Diseño de cápsulas',
-          start: 2,
-          end: 3,
-          roleLabel: 'UX',
-          responsible: 'Sandra Valera - Diseño UX',
-          content: `Qué: Estructuración de unidades basadas en decisión.
+Resultado: Marco pedagógico.`
+    },
+    {
+      id: 7,
+      title: 'Competencias y objetivos de aprendizaje',
+      start: 2,
+      end: 3,
+      roleLabel: 'DI',
+      responsible: 'Marta Polo - Diseño instruccional',
+      content: `Qué: Definición de competencias.
+Para qué: Alinear contenido y evaluación.
+Resultado: Competencias definidas.`
+    },
+    {
+      id: 8,
+      title: 'Estructuración de módulos y contenidos',
+      start: 3,
+      end: 3,
+      roleLabel: 'DI',
+      responsible: 'Marta Polo - Diseño instruccional',
+      content: `Qué: Organización de contenidos.
+Para qué: Facilitar progresión del aprendizaje.
+Resultado: Estructura definida.`
+    },
+    {
+      id: 9,
+      title: 'Diseño de la estructura de cápsulas',
+      start: 3,
+      end: 4,
+      roleLabel: 'UX',
+      responsible: 'Sandra Valera - Diseño UX',
+      content: `Qué: Diseño de unidades formativas.
 Para qué: Facilitar aprendizaje en contexto real.
-Resultado: Modelo de cápsula reutilizable.`
-        },
-        {
-          id: 6,
-          title: 'Sistema de evaluación',
-          start: 3,
-          end: 4,
-          roleLabel: 'DI',
-          responsible: 'Marta Polo - Diseño instruccional',
-          content: `Qué: Diseño de evaluación diagnóstica y sumativa.
-Para qué: Medir aprendizaje y progreso.
-Resultado: Sistema evaluativo integrado.`
-        }
-      ]
+Resultado: Modelo de cápsula.`
     },
+    {
+      id: 10,
+      title: 'Diseño del sistema de evaluación',
+      start: 3,
+      end: 4,
+      roleLabel: 'DI',
+      responsible: 'Marta Polo - Diseño instruccional',
+      content: `Qué: Definición del sistema evaluativo.
+Para qué: Medir aprendizaje.
+Resultado: Sistema definido.`
+    },
+    {
+      id: 11,
+      title: 'Aplicación del DUA al diseño',
+      start: 3,
+      end: 4,
+      roleLabel: 'DI',
+      responsible: 'Marta Polo - Diseño instruccional',
+      content: `Qué: Aplicación de criterios de accesibilidad.
+Para qué: Garantizar inclusión.
+Resultado: Diseño accesible.`
+    }
+  ]
+},
 
     {
-      id: 'f3',
-      phase: 'DESARROLLO',
-      color: 'bg-indigo-500',
-      tasks: [
-        {
-          id: 7,
-          title: 'Producción de contenidos',
-          start: 3,
-          end: 5,
-          roleLabel: 'DI',
-          responsible: 'Marta Polo - Diseño instruccional',
-          content: `Qué: Elaboración de guiones y materiales.
-Para qué: Construir contenido formativo.
-Resultado: Contenidos listos.`
-        },
-        {
-          id: 8,
-          title: 'Diseño UX',
-          start: 3,
-          end: 5,
-          roleLabel: 'UX',
-          responsible: 'Sandra Valera - Diseño visual y UX',
-          content: `Qué: Diseño visual y experiencia de usuario.
-Para qué: Mejorar interacción.
+  id: 'f3',
+  phase: 'DESARROLLO',
+  color: 'bg-indigo-500',
+  tasks: [
+    {
+      id: 12,
+      title: 'Producción de contenidos',
+      start: 3,
+      end: 5,
+      roleLabel: 'DI',
+      responsible: 'Marta Polo - Diseño instruccional',
+      content: `Qué: Elaboración de guiones y contenidos formativos.
+Para qué: Construir la base pedagógica del programa.
+Resultado: Contenidos estructurados.`
+    },
+    {
+      id: 13,
+      title: 'Diseño visual y UX',
+      start: 3,
+      end: 5,
+      roleLabel: 'UX',
+      responsible: 'Sandra Valera - Diseño UX',
+      content: `Qué: Diseño visual y experiencia de usuario.
+Para qué: Mejorar interacción y usabilidad.
 Resultado: Prototipos en Figma.`
-        },
-        {
-          id: 9,
-          title: 'Integración LMS',
-          start: 5,
-          end: 6,
-          roleLabel: 'TECH',
-          responsible: 'Yolanda Fuertes - Tecnología',
-          content: `Qué: Carga y configuración de contenidos.
+    },
+    {
+      id: 14,
+      title: 'Desarrollo de recursos multimedia',
+      start: 4,
+      end: 6,
+      roleLabel: 'TECH',
+      responsible: 'Yolanda Fuertes - Tecnología y plataforma',
+      content: `Qué: Creación de vídeos y recursos interactivos.
+Para qué: Facilitar comprensión y engagement.
+Resultado: Recursos multimedia integrados.`
+    },
+    {
+      id: 15,
+      title: 'Actividades interactivas y simulaciones',
+      start: 4,
+      end: 6,
+      roleLabel: 'TECH',
+      responsible: 'Yolanda Fuertes - Tecnología y plataforma',
+      content: `Qué: Desarrollo de simulaciones y actividades prácticas.
+Para qué: Aplicar conocimientos en contexto real.
+Resultado: Experiencias interactivas.`
+    },
+    {
+      id: 16,
+      title: 'Integración de contenidos en LMS',
+      start: 5,
+      end: 6,
+      roleLabel: 'TECH',
+      responsible: 'Yolanda Fuertes - Tecnología y plataforma',
+      content: `Qué: Carga e integración de contenidos.
 Para qué: Preparar entorno formativo.
-Resultado: Curso operativo.`
-        }
-      ]
-    },
+Resultado: Curso operativo en LMS.`
+    }
+  ]
+},
 
     {
-      id: 'f4',
-      phase: 'IMPLEMENTACIÓN',
-      color: 'bg-teal-500',
-      tasks: [
-        {
-          id: 10,
-          title: 'Configuración LMS',
-          start: 6,
-          end: 6,
-          roleLabel: 'TECH',
-          responsible: 'Yolanda Fuertes - Tecnología',
-          content: `Qué: Parametrización del entorno.
-Para qué: Asegurar funcionamiento.
-Resultado: Plataforma preparada.`
-        },
-        {
-          id: 11,
-          title: 'Pruebas',
-          start: 6,
-          end: 7,
-          roleLabel: 'DI',
-          responsible: 'Marta Polo - Diseño Instruccional',
-          content: `Qué: Validación técnica y funcional.
-Para qué: Detectar errores.
+  id: 'f4',
+  phase: 'IMPLEMENTACIÓN',
+  color: 'bg-teal-500',
+  tasks: [
+    {
+      id: 17,
+      title: 'Configuración entorno LMS',
+      start: 6,
+      end: 6,
+      roleLabel: 'TECH',
+      responsible: 'Yolanda Fuertes - Tecnología y plataforma',
+      content: `Qué: Parametrización del entorno LMS.
+Para qué: Asegurar funcionamiento correcto.
+Resultado: Plataforma configurada.`
+    },
+    {
+      id: 18,
+      title: 'Pruebas técnicas y funcionales',
+      start: 6,
+      end: 7,
+      roleLabel: 'TECH',
+      responsible: 'Yolanda Fuertes - Tecnología y plataforma',
+      content: `Qué: Validación técnica y funcional del sistema.
+Para qué: Detectar errores y asegurar calidad.
 Resultado: Sistema validado.`
-        },
-        {
-          id: 12,
-          title: 'Despliegue',
-          start: 7,
-          end: 7,
-          roleLabel: 'PM',
-          responsible: 'Carolina Gómez - Project Manager',
-          content: `Qué: Publicación del curso.
-Para qué: Inicio de la formación.
-Resultado: Curso activo.`
-        }
-      ]
     },
+    {
+      id: 19,
+      title: 'Ajustes y optimización',
+      start: 7,
+      end: 7,
+      roleLabel: 'DI',
+      responsible: 'Marta Polo - Diseño instruccional',
+      content: `Qué: Ajustes pedagógicos y técnicos tras pruebas.
+Para qué: Optimizar la experiencia formativa.
+Resultado: Sistema optimizado.`
+    },
+    {
+      id: 20,
+      title: 'Despliegue del programa formativo',
+      start: 7,
+      end: 7,
+      roleLabel: 'PM',
+      responsible: 'Carolina Gómez - Project Manager',
+      content: `Qué: Publicación y lanzamiento del programa.
+Para qué: Iniciar la formación.
+Resultado: Programa activo.`
+    }
+  ]
+},
 
     {
-      id: 'f5',
-      phase: 'EVALUACIÓN',
-      color: 'bg-purple-500',
-      tasks: [
-        {
-          id: 13,
-          title: 'Seguimiento',
-          start: 7,
-          end: 8,
-          roleLabel: 'PM',
-          responsible: 'Carolina Gómez - Project Manager',
-          content: `Qué: Monitorización mediante analytics.
-Para qué: Evaluar uso y progreso.
-Resultado: Datos de aprendizaje.`
-        },
-        {
-          id: 14,
-          title: 'Evaluación de resultados',
-          start: 8,
-          end: 8,
-          roleLabel: 'DI',
-          responsible: 'Marta Polo - Diseño Instruccional',
-          content: `Qué: Análisis de indicadores.
-Para qué: Medir impacto.
-Resultado: Informe de resultados.`
-        },
-        {
-          id: 15,
-          title: 'Mejora continua',
-          start: 8,
-          end: 8,
-          roleLabel: 'PM',
-          responsible: 'Efrén Úbeda - Gestión  corporativa',
-          content: `Qué: Ajustes basados en datos.
-Para qué: Optimizar el programa.
-Resultado: Iteración del diseño.`
-        }
-      ]
+  id: 'f5',
+  phase: 'EVALUACIÓN',
+  color: 'bg-purple-500',
+  tasks: [
+    {
+  id: 21,
+  title: 'Evaluación inicial diagnóstica',
+  start: 1,
+  end: 1,
+  roleLabel: 'DI',
+  responsible: 'Marta Polo - Diseño instruccional',
+  content: `Qué: Evaluación del nivel inicial del alumnado.
+Para qué: Ajustar el punto de partida del aprendizaje.
+Resultado: Diagnóstico inicial del nivel.`
+},
+{
+      id: 22,
+      title: 'Seguimiento del aprendizaje (Learning Analytics)',
+      start: 7,
+      end: 8,
+      roleLabel: 'PM',
+      responsible: 'Carolina Gómez - Project Manager',
+      content: `Qué: Monitorización del uso y progreso mediante analítica.
+Para qué: Evaluar comportamiento y evolución del alumnado.
+Resultado: Datos de aprendizaje disponibles.`
     },
+    {
+      id: 23,
+      title: 'Evaluación de resultados',
+      start: 8,
+      end: 8,
+      roleLabel: 'DI',
+      responsible: 'Marta Polo - Diseño instruccional',
+      content: `Qué: Análisis de indicadores de aprendizaje.
+Para qué: Medir impacto del programa.
+Resultado: Informe de resultados.`
+    },
+    {
+      id: 24,
+      title: 'Recogida de feedback',
+      start: 8,
+      end: 8,
+      roleLabel: 'PM',
+      responsible: 'Carolina Gómez - Project Manager',
+      content: `Qué: Recopilación de opiniones de usuarios.
+Para qué: Detectar mejoras.
+Resultado: Feedback estructurado.`
+    },
+    {
+      id: 25,
+      title: 'Propuestas de mejora continua',
+      start: 8,
+      end: 8,
+      roleLabel: 'DI',
+      responsible: 'Marta Polo - Diseño instruccional',
+      content: `Qué: Definición de ajustes basados en datos.
+Para qué: Optimizar el programa formativo.
+Resultado: Plan de mejora continua.`
+    }
+  ]
+},
 
    {
   id: 'f6',
@@ -217,7 +327,7 @@ Resultado: Iteración del diseño.`
   color: 'bg-slate-600',
   tasks: [
     {
-      id: 16,
+      id: 25,
       title: 'Gestión del proyecto',
       start: 1,
       end: 8,
@@ -228,7 +338,7 @@ Para qué: Garantizar cumplimiento de planificación.
 Resultado: Proyecto alineado.`
     },
     {
-      id: 17,
+      id: 26,
       title: 'Control de calidad',
       start: 3,
       end: 8,
@@ -239,7 +349,7 @@ Para qué: Asegurar coherencia metodológica.
 Resultado: Calidad garantizada.`
     },
     {
-      id: 18,
+      id: 27,
       title: 'Supervisión corporativa',
       start: 1,
       end: 8,
@@ -250,7 +360,7 @@ Para qué: Garantizar coherencia global y alineación corporativa.
 Resultado: Propuesta alineada con objetivos de negocio.`
     },
 {
-  id: 19,
+  id: 28,
   title: 'Comunicación con stakeholders',
   start: 1,
   end: 8,
