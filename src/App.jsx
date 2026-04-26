@@ -248,7 +248,18 @@ Resultado: Calidad garantizada.`
       content: `Qué: Supervisión estratégica del proyecto.
 Para qué: Garantizar coherencia global y alineación corporativa.
 Resultado: Propuesta alineada con objetivos de negocio.`
-    }
+    },
+{
+  id: 19,
+  title: 'Comunicación con stakeholders',
+  start: 1,
+  end: 8,
+  roleLabel: 'PM',
+  responsible: 'Carolina Gómez · Project Manager',
+  content: `Qué: Gestión de la comunicación con cliente y agentes implicados.
+Para qué: Alinear expectativas, validar avances y facilitar la toma de decisiones.
+Resultado: Seguimiento transparente y validación continua del proyecto.`
+}
   ]
 }
   ];
@@ -277,7 +288,7 @@ Resultado: Propuesta alineada con objetivos de negocio.`
 
   <div className="w-full max-w-[120px] px-3 py-2 rounded-xl border border-green-500/40 bg-[#0d1117]">
     <span className="block text-[9px] text-slate-500">Estado</span>
-    <span className="text-green-400 text-sm">● Planificado</span>
+    <span className="text-green-400 text-sm">Planificado</span>
   </div>
 
   <div className="w-full max-w-[120px] px-3 py-2 rounded-xl border border-purple-500/40 bg-[#0d1117]">
