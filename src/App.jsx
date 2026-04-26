@@ -311,9 +311,9 @@ Resultado: Seguimiento transparente y validación continua del proyecto.`
         <div className="bg-[#0d1117] rounded-2xl border border-slate-800 overflow-hidden">
 
           <div className="grid grid-cols-12 border-b border-slate-800">
-            <div className="col-span-4 p-4 text-xs text-slate-500">
-              Actividades
-            </div>
+<div className="col-span-4 p-4 text-sm font-semibold text-slate-300 tracking-wider">
+  FASES
+</div>
 
             <div className="col-span-8 grid grid-cols-8">
               {weeks.map(w => (
