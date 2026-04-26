@@ -267,11 +267,11 @@ Resultado: Seguimiento transparente y validación continua del proyecto.`
   return (
     <div className="min-h-screen bg-[#0a0e14] text-slate-200">
 
-      {/* HEADER (el tuyo intacto) */}
-      <div className="max-w-6xl mx-auto px-6 mt-6">
-        <div className="grid grid-cols-12 items-start gap-6">
+      {/* HEADER */}
+      <div className="max-w-5xl mx-auto px-5 mt-5">
+        <div className="grid grid-cols-12 items-start gap-1">
 
-          <div className="col-span-10 border-l-4 border-green-500 pl-4">
+          <div className="col-span-10 pl-4">
             <img 
               src="/hero.png" 
               alt="SYMEC banner"
