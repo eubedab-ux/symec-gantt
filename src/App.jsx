@@ -1,9 +1,19 @@
 import React, { useState } from 'react';
+import { Info } from 'lucide-react';
 
 const App = () => {
   const [selectedTask, setSelectedTask] = useState(null);
 
   const weeks = [1,2,3,4,5,6,7,8];
+
+  const phaseDescriptions = {
+    ANÁLISIS: 'En esta fase se definen las bases del proyecto a partir del estudio de los requisitos, el contexto organizativo y las necesidades formativas. Se identifican los perfiles destinatarios y se concretan los objetivos de aprendizaje, estableciendo el marco sobre el que se desarrollará la propuesta.',
+    DISEÑO: 'Se establece el enfoque pedagógico y se estructura la experiencia de aprendizaje. Se definen las competencias, los contenidos y la organización modular, así como el modelo de cápsulas, el sistema de evaluación y los criterios de accesibilidad, asegurando la coherencia metodológica del conjunto.',
+    DESARROLLO: 'Se produce y construye el contenido formativo. Incluye la elaboración de materiales, el diseño de la experiencia de usuario, el desarrollo de recursos interactivos y su integración en la plataforma LMS, dando forma operativa a la propuesta diseñada.',
+    IMPLEMENTACIÓN: 'Se despliega el programa formativo en el entorno tecnológico. Se realizan pruebas técnicas y funcionales, se ajustan posibles incidencias y se pone en marcha la formación en condiciones reales de uso.',
+    EVALUACIÓN: 'Se analizan los resultados del proceso formativo mediante indicadores definidos y herramientas de seguimiento. Se recogen datos de uso y feedback de los participantes, permitiendo valorar el impacto y orientar mejoras.',
+    TRANSVERSAL: 'De forma paralela a todas las fases, se desarrollan tareas de coordinación, seguimiento y control de calidad pedagógica. Este bloque garantiza la coherencia del proyecto, la alineación con los objetivos definidos y la incorporación de mejoras continuas a lo largo del proceso.'
+  };
 
   const projectData = [
     {
@@ -418,8 +428,17 @@ Resultado: Seguimiento transparente y validación continua del proyecto.`
 
       {/* GANTT */}
       <div className="p-6 md:p-8 max-w-7xl mx-auto">
-        <div className="bg-[#0d1117] rounded-2xl border border-slate-800 overflow-hidden">
+        <div className="mb-2 rounded-2xl border border-slate-800 bg-[#0d1117] px-4 py-4 text-center md:px-5">
+          <p className="mx-auto max-w-6xl text-[15px] leading-relaxed text-slate-400">
+            El proyecto se estructura en cinco fases principales, complementadas por un
+            bloque transversal que asegura la coherencia y el seguimiento continuo. Esta
+            organización permite articular de forma clara el proceso de diseño, desarrollo e
+            implementación, manteniendo la alineación entre los distintos elementos de la
+            propuesta.
+          </p>
+        </div>
 
+        <div className="bg-[#0d1117] rounded-2xl border border-slate-800 overflow-visible">
           <div className="grid grid-cols-12 border-b border-slate-800">
 <div className="col-span-4 p-4 text-sm font-semibold text-slate-300 tracking-wider">
   FASES
@@ -443,6 +462,20 @@ Resultado: Seguimiento transparente y validación continua del proyecto.`
 
   <span className="text-xs font-bold tracking-wider text-slate-300">
     {phase.phase}
+  </span>
+
+  <span className="relative inline-flex items-center group/info">
+    <Info
+      size={13}
+      aria-hidden="true"
+      className="text-[#7DD3FC] transition-colors group-hover/info:text-[#38BDF8]"
+    />
+    <span
+      role="tooltip"
+      className="pointer-events-none absolute bottom-full left-full z-[9999] mb-2 ml-2 hidden w-max max-w-[280px] rounded-md border border-slate-700 bg-[#1c2128] px-3 py-2 text-left text-[11px] font-normal leading-relaxed tracking-normal text-[#7DD3FC] shadow-xl group-hover/info:block"
+    >
+      {phaseDescriptions[phase.phase]}
+    </span>
   </span>
 
 </div>
@@ -548,15 +581,47 @@ Resultado: Seguimiento transparente y validación continua del proyecto.`
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 16v-4m0-4h.01"/>
       </svg>
 
-      Notas de implementación
+      Sistema de gestión y comunicación
     </h4>
 
-    <p className="text-xs text-slate-400 leading-relaxed">
-      Dado el carácter técnico del proyecto, se contempla la colaboración puntual 
-      de perfiles especializados en funciones concretas (como soporte de plataforma 
-      o asesoramiento en ciberseguridad), en función de las necesidades que puedan 
-      surgir durante las fases de desarrollo e implementación.
-    </p>
+    <div className="space-y-4 text-xs text-slate-400 leading-relaxed">
+      <p>
+        La gestión del proyecto se articula mediante un sistema integrado de planificación,
+        comunicación y seguimiento que permite coordinar el trabajo del equipo, garantizar
+        la trazabilidad de las decisiones y gestionar incidencias de forma ágil.
+      </p>
+
+      <div>
+        <h5 className="mb-1 font-semibold text-cyan-400">Gestión del proyecto</h5>
+        <p>
+          Se utiliza Asana como herramienta de gestión de tareas
+          estructurada por fases del proyecto, donde se organizan actividades,
+          responsables y tiempos. Esto permite visualizar el avance, priorizar tareas y
+          mantener alineado al equipo con el cronograma definido.
+        </p>
+      </div>
+
+      <div>
+        <h5 className="mb-1 font-semibold text-cyan-400">Comunicación y colaboración</h5>
+        <p>
+          La comunicación se realiza a través de canales síncronos y asíncronos
+          (Teams/Google Workspace y documentos compartidos en Google Drive), facilitando la
+          coordinación continua, la revisión conjunta de entregables y la toma de
+          decisiones. Se establecen puntos de seguimiento periódicos para validar avances
+          y detectar posibles desviaciones.
+        </p>
+      </div>
+
+      <div>
+        <h5 className="mb-1 font-semibold text-cyan-400">Gestión de incidencias</h5>
+        <p>
+          Las incidencias se registran y gestionan dentro de la propia herramienta de
+          proyecto, permitiendo su trazabilidad desde la detección hasta su resolución. Se
+          priorizan en función de su impacto y urgencia, y se vinculan a tareas concretas
+          para asegurar su seguimiento y cierre.
+        </p>
+      </div>
+    </div>
 
   </div>
 
